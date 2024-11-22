@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gradient</title>
+</head>
+<body>
+  
+    <canvas id="myCanvas" width="500" height="300" style="border:1px solid #000;"></canvas>
+    <script>
+     
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        
+        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+
+        
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 10, 150, 80);
+
+        
+        ctx.beginPath();
+        ctx.arc(300, 100, 50, 0, 2 * Math.PI); 
+        ctx.fill(); 
+
+        // Viết văn bản
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello Canvas", 200, 200); 
+    </script>
+</body>
+</html>

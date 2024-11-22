@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>viết chữt</title>
+</head>
+<body>
+    <!-- Thêm phần canvas -->
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+    <script>
+        // Lấy đối tượng canvas từ HTML
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        // Cài đặt font chữ
+        ctx.font = "30px Arial";
+
+        // Viết đoạn văn bản lên canvas
+        ctx.fillText("Hello World", 10, 50); // Văn bản, tọa độ x, tọa độ y
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> vẽ đường tròn </title>
+</head>
+<body>
+    <!-- Thêm phần canvas -->
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+    <script>
+        // Lấy đối tượng canvas từ HTML
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        // Bắt đầu một đường vẽ
+        ctx.beginPath();
+
+        // Vẽ một hình tròn với:
+        // Tâm tại (100, 50)
+        // Bán kính là 50
+        // Góc bắt đầu là 0
+        // Góc kết thúc là 2 * Math.PI (một vòng tròn đầy đủ)
+        ctx.arc(100, 50, 50, 0, 2 * Math.PI);
+
+        // Vẽ đường viền
+        ctx.stroke();
+    </script>
+</body>
+</html>

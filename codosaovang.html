@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing</title>
+</head>
+<body>
+    <!-- Canvas để vẽ -->
+    <canvas id="canvas" width="500" height="300" style="border:1px solid black;"></canvas>
+    <script>
+        // Lấy đối tượng canvas và kiểm tra hỗ trợ
+        var canvas = document.getElementById('canvas');
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+
+            // Vẽ hình chữ nhật màu đỏ
+            ctx.fillStyle = "rgb(255,0,0)";
+            ctx.fillRect(0, 0, 500, 300);
+
+            // Vẽ ngôi sao màu vàng
+            ctx.beginPath();
+            ctx.fillStyle = "yellow"; // Đặt màu vàng
+
+            // Tạo các điểm của ngôi sao
+            ctx.moveTo(250, 80); // Đỉnh trên cùng
+            ctx.lineTo(200, 200); // Điểm bên trái dưới
+            ctx.lineTo(320, 125); // Điểm bên phải trên
+            ctx.lineTo(180, 125); // Điểm bên trái trên
+            ctx.lineTo(300, 200); // Điểm bên phải dưới
+            ctx.lineTo(250, 80); // Quay về đỉnh trên cùng
+
+            ctx.closePath();
+            ctx.fill(); // Tô màu hình
+        } else {
+            alert("Canvas không được hỗ trợ trên trình duyệt này!");
+        }
+    </script>
+</body>
+</html>
